@@ -1,12 +1,12 @@
 # Institutional Equity Research Engine
 
-This is a local Python Render application for structured equity research. It asks the mandatory investment-horizon question first, separates future ideas from current holdings, scores 12 institutional-style matrices, shows a live price chart, reviews earnings expectation versus actual, gathers broader research sources, analyzes official company-report data when available, and handles selected leveraged ETFs such as `NVDL` by looking through to the underlying stock.
+This is a local Python Streamlit application for structured equity research. It asks the mandatory investment-horizon question first, separates future ideas from current holdings, scores 12 institutional-style matrices, shows a live price chart, reviews earnings expectation versus actual, gathers broader research sources, analyzes official company-report data when available, and handles selected leveraged ETFs such as `NVDL` by looking through to the underlying stock.
 
 The app runs on Windows and Mac. It uses Yahoo Finance market data through the `yfinance` package, plus Google News search results, Nasdaq public earnings fallback, SEC EDGAR filing links and XBRL company facts for US-listed companies, and company source links when available. An internet connection is required.
 
 ## Files
 
-- `app.py` - the Render application
+- `app.py` - the Streamlit application
 - `requirements.txt` - the Python packages needed
 - `README.md` - this setup guide
 
@@ -77,13 +77,13 @@ pip install -r requirements.txt
 Windows:
 
 ```bash
-render run app.py
+streamlit run app.py
 ```
 
 Mac:
 
 ```bash
-render run app.py
+streamlit run app.py
 ```
 
 After a few seconds, your browser should open automatically. If it does not, copy the local address shown in the terminal. It usually looks like:
@@ -133,14 +133,14 @@ If it still fails:
 3. Delete the `.venv` folder inside this app folder.
 4. Double-click `start_windows.bat` again.
 
-## Deploying to Render Cloud
+## Deploying to Streamlit Cloud
 
-For Render Cloud, your GitHub repository should include:
+For Streamlit Cloud, your GitHub repository should include:
 
 - `app.py`
 - `requirements.txt`
 - `README.md`
-- `.render/config.toml` if you added a custom theme
+- `.streamlit/config.toml` if you added a custom theme
 
 Do not upload:
 
@@ -148,10 +148,10 @@ Do not upload:
 - `start_windows.bat`
 - `start_mac.command`
 
-In Render Cloud, set the main file path to:
+In Streamlit Cloud, set the main file path to:
 
 ```text
 app.py
 ```
 
-If you see `Exited with status 127`, check that the main file path is not set to `start_windows.bat`, `start_mac.command`, or any command script. Render Cloud runs Linux, so Windows and Mac starter scripts are only for your own computer.
+If you see `Exited with status 127`, check that the main file path is not set to `start_windows.bat`, `start_mac.command`, or any command script. Streamlit Cloud runs Linux, so Windows and Mac starter scripts are only for your own computer.
